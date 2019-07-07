@@ -1,0 +1,16 @@
+MIDlet-1: HeatingElement,,launch.Launcher
+MIDlet-Jar-Size: 112348
+MIDlet-Jar-URL: HeatingElement.jar
+MIDlet-Name: HeatingElement MIDlet Suite
+MIDlet-Vendor: Gemalto M2M GmbH
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: IMP-NG
+Oracle-MIDlet-Autostart: 1
+Oracle-MIDlet-Restart: true
+Oracle-MIDlet-Restart-Count: 5
+gpioInput1: GPIO23
+gpioInput2: GPIO22
+subscriberPhoneNumber1: 0524879601
+subscriberPhoneNumber2: 0524879601
+subscriberPhoneNumber3: 0524879601

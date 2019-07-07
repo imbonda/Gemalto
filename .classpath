@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.elipse.mtj.JavaMEContainer/IMP-NG EHS5 Wireless Toolkit by Cinterion/IMP_NG_EHS5"/>
+	<classpathentry exported="true" kind="lib" path="C:/Code/Casual/Gemalto/ehsx_rev03.001_arn0000055_install-cd/program files/Cinterion/CMTK/EHS5/WTK/lib/cwm_1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Code/Casual/Gemalto/ehsx_rev03.001_arn0000055_install-cd/program files/Cinterion/CMTK/EHS5/WTK/resources/cwmlib_1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
