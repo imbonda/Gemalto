@@ -7,6 +7,7 @@ import javax.microedition.midlet.MIDletStateChangeException;
 
 import utils.NetworkConnection;
 import utils.RS232Connection;
+import utils.TransmitRateRegulator;
 import utils.Utils;
 
 public class Launcher extends MIDlet {
@@ -17,6 +18,8 @@ public class Launcher extends MIDlet {
 	String netConnProfile;
 	String netUrl;
 	String netDataParams;
+	String transmitIntervalTime;
+	String transmitIntervalCount;
 	String rs232ComStr;
 	String rs232DataFilter;
 	RS232Connection rs232conn;
@@ -51,12 +54,14 @@ public class Launcher extends MIDlet {
 		}
 		
 		NetworkConnection nc = new NetworkConnection(this.debugMode, this.netConnProfile, this.netUrl, this.netDataParams);
+		TransmitRateRegulator trr = new TransmitRateRegulator(this.transmitIntervalTime, this.transmitIntervalCount);
 		
 		TaskMonitor tm = new TaskMonitor(
 				this.debugMode,
 				this.rs232conn,
 				this.rs232DataFilter,
-				nc);
+				nc,
+				trr);
 		Thread t = new Thread(tm);
 		t.start();
 	}
@@ -70,6 +75,8 @@ public class Launcher extends MIDlet {
 		this.netConnProfile = getAppProperty("NET_CONN_PROFILE");
 		this.rs232DataFilter = getAppProperty("RS232_DATA_FILTER");
 		this.rs232ComStr = getAppProperty("RS232_COM");
+		this.transmitIntervalCount = getAppProperty("TRANSMIT_INTERVAL_COUNT");
+		this.transmitIntervalTime = getAppProperty("TRANSMIT_INTERVAL_TIME");
 		
 		String debugStr = getAppProperty("DEBUG_MODE");
 		if (debugStr.equals("true")) {
@@ -85,6 +92,8 @@ public class Launcher extends MIDlet {
 		Utils.printWithTAG(TAG, "JAD post params: " + this.netDataParams);
 		Utils.printWithTAG(TAG, "JAD RS232 com: " + this.rs232ComStr);
 		Utils.printWithTAG(TAG, "JAD NMEA filter: " + this.rs232DataFilter);
+		Utils.printWithTAG(TAG, "JAD Transmittion time interval: " + this.transmitIntervalTime);
+		Utils.printWithTAG(TAG, "JAD Transmittion count interval: " + this.transmitIntervalCount);
 		Utils.printWithTAG(TAG, "------------------- end -------------------");
 	}
 	

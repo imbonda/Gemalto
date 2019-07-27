@@ -1,6 +1,6 @@
 DEBUG_MODE: false
 MIDlet-1: GpsShare,,launch.Launcher
-MIDlet-Jar-Size: 8382
+MIDlet-Jar-Size: 10432
 MIDlet-Jar-URL: GS.jar
 MIDlet-Name: GpsShare MIDlet Suite
 MIDlet-Vendor: Gemalto M2M GmbH
@@ -15,3 +15,5 @@ Oracle-MIDlet-Restart: true
 Oracle-MIDlet-Restart-Count: 5
 RS232_COM: comm:COM0;blocking=on;baudrate=115200
 RS232_DATA_FILTER: GNRMC
+TRANSMIT_INTERVAL_COUNT: 60
+TRANSMIT_INTERVAL_TIME: 0

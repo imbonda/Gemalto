@@ -1,16 +1,18 @@
-Oracle-MIDlet-Restart-Count: 5
-NET_URL: https://api.telegram.org/bot842799983:AAHnBgAUSBUNOYfLM5mU2cTh0gpC5GnBfUA/sendMessage
-MIDlet-1: GpsShare,,launch.Launcher
+MIDlet-Version: 1.0.0
+TRANSMIT_INTERVAL_TIME: 0
 NET_DATA_PARAMS: chat_id=823175737&text=
+MicroEdition-Configuration: CLDC-1.1
 MIDlet-Jar-URL: GS.jar
 Oracle-MIDlet-Autostart: 1
-Oracle-MIDlet-Restart: true
-RS232_DATA_FILTER: GNRMC
-MicroEdition-Configuration: CLDC-1.1
-MIDlet-Version: 1.0.0
-MIDlet-Vendor: Gemalto M2M GmbH
 MIDlet-Name: GpsShare MIDlet Suite
-MicroEdition-Profile: IMP-NG
-NET_CONN_PROFILE: bearer_type=gprs;access_point=internet.t-d1.de;username=anyone;password=something
+Oracle-MIDlet-Restart-Count: 5
 RS232_COM: comm:COM0;blocking=on;baudrate=115200
+MIDlet-1: GpsShare,,launch.Launcher
+NET_URL: https://api.telegram.org/bot842799983:AAHnBgAUSBUNOYfLM5mU2cTh0gpC5GnBfUA/sendMessage
+TRANSMIT_INTERVAL_COUNT: 60
+RS232_DATA_FILTER: GNRMC
+MicroEdition-Profile: IMP-NG
+MIDlet-Vendor: Gemalto M2M GmbH
 DEBUG_MODE: false
+Oracle-MIDlet-Restart: true
+NET_CONN_PROFILE: bearer_type=gprs;access_point=internet.t-d1.de;username=anyone;password=something

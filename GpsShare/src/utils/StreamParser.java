@@ -61,8 +61,8 @@ public class StreamParser {
 					filterPassed = true;
 				}
 			}
-			// Notice skip of carriage return.
-			if (ch != '\r') {
+			// Notice skip of carriage return and new line.
+			if (ch != '\r' && ch != '\n') {
 				recorded.append((char)ch);
 			}
 			if (ch == '\n') {
