@@ -2,7 +2,6 @@ package utils;
 
 public class TransmitRateRegulator {
 
-	private static final int RADIX = 10;
 	private static final int MILLISECONDS = 1000;
 	
 	private long timeInterval;
@@ -11,22 +10,9 @@ public class TransmitRateRegulator {
 	private long countSinceTransmission;
 	private boolean noTransmissionRecords;
 	
-	public TransmitRateRegulator(String timeInterval, String countInterval) {
-		// Set time interval.
-		try {
-			this.timeInterval = Long.parseLong(timeInterval, RADIX);
-		}
-		catch (NumberFormatException e) {
-			this.timeInterval = 0;
-		}
-		// Set count interval.
-		try {
-			this.countInterval = Long.parseLong(countInterval, RADIX);
-		}
-		catch (NumberFormatException e) {
-			this.countInterval = 0;
-		}
-		
+	public TransmitRateRegulator(long timeInterval, long countInterval) {
+		this.timeInterval = timeInterval;
+		this.countInterval = countInterval;	
 		this.latestTransmissionTime = 0;
 		this.countSinceTransmission = 0;
 		this.noTransmissionRecords = true;

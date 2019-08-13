@@ -5,6 +5,7 @@ MicroEdition-Configuration: CLDC-1.1
 MIDlet-Jar-URL: GS.jar
 Oracle-MIDlet-Autostart: 1
 MIDlet-Name: GpsShare MIDlet Suite
+DEVICE_ID: NAN
 Oracle-MIDlet-Restart-Count: 5
 RS232_COM: comm:COM0;blocking=on;baudrate=115200
 MIDlet-1: GpsShare,,launch.Launcher

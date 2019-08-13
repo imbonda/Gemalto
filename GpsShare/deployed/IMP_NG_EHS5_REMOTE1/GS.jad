@@ -1,6 +1,7 @@
 DEBUG_MODE: false
+DEVICE_ID: NAN
 MIDlet-1: GpsShare,,launch.Launcher
-MIDlet-Jar-Size: 10432
+MIDlet-Jar-Size: 10658
 MIDlet-Jar-URL: GS.jar
 MIDlet-Name: GpsShare MIDlet Suite
 MIDlet-Vendor: Gemalto M2M GmbH

@@ -16,10 +16,11 @@ public class Utils {
 	/**
 	 * Reformatting a GNRMC strings to allow sorting by time stamps.
 	 *  
-	 * @param data	A NMEA data string of type GNRMC.
-	 * @return		A reformatted copy of the given string with (allowing to sort by time-stamp field).
+	 * @param data		A NMEA data string of type GNRMC.
+	 * @param deviceId	A unique string identifier for the underlying device.
+	 * @return			A reformatted copy of the given string with (allowing to sort by time-stamp field).
 	 */
-	public static String reformatGNRMC(String data) {
+	public static String reformatGNRMC(String data, String deviceId) {
 		String secondItem = null;
 		StringBuffer reformatted = new StringBuffer(data.length());
 		int itemNumber = 1;
@@ -34,6 +35,10 @@ public class Utils {
 				if (item != null && secondItem != null) {
 					item = item + secondItem;
 				}
+			}
+			if (itemNumber == 14) {
+				// Override the fourteenth item with the device-id.
+				item = deviceId;
 			}
 			reformatted.append(item);
 			reformatted.append(',');

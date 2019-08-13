@@ -11,16 +11,18 @@ public class TaskMonitor implements Runnable {
 	private static final String TAG = "[TaskMonitor]: ";
 	
 	boolean debug;
-	RS232Connection rs232conn;
+	String deviceId;
 	String filterDataType;
+	RS232Connection rs232conn;
 	NetworkConnection nc;
 	TransmitRateRegulator trr;
 	
-	public TaskMonitor(boolean debug, RS232Connection rs232conn, String filterDataType, NetworkConnection nc,
-			TransmitRateRegulator trr) {
+	public TaskMonitor(boolean debug, String deviceId, String filterDataType,
+			RS232Connection rs232conn, NetworkConnection nc, TransmitRateRegulator trr) {
 		this.debug = debug;
-		this.rs232conn = rs232conn;
+		this.deviceId = deviceId;
 		this.filterDataType = filterDataType;
+		this.rs232conn = rs232conn;
 		this.nc = nc;
 		this.trr = trr;
 	}
@@ -28,7 +30,7 @@ public class TaskMonitor implements Runnable {
 	public void run() {
 		while (true) {
 			String message = StreamParser.getNextSentence(this.rs232conn, this.filterDataType);
-			message = Utils.reformatGNRMC(message);
+			message = Utils.reformatGNRMC(message, this.deviceId);
 			transmit(message);
 		}
 	}
