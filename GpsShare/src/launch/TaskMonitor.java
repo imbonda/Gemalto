@@ -45,6 +45,11 @@ public class TaskMonitor implements Runnable {
 				Utils.printWithTAG(TAG, "Sending message: " + message);
 			}
 		}
+		else {
+			if (this.debug) {
+				Utils.printWithTAG(TAG, "Skipping message transmission: " + message);
+			}
+		}
 		
 		this.trr.recordTransmit(isTransmitAllowed);
 	}
